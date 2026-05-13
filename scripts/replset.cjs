@@ -8,7 +8,7 @@ async function main() {
 	try {
 		client = new MongoClient(url);
 		await client.connect();
-		console.log("replica set database connected");
+		console.log("connected to replica set server");
 		await client.close();
 	} catch (error) {
 		console.error(error);

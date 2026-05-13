@@ -7,7 +7,7 @@ async function main() {
 	try {
 		client = new MongoClient(url);
 		await client.connect();
-		console.log("atlas database connected");
+		console.log("connected to atlas server database");
 		await client.close();
 	} catch (error) {
 		console.error(error);
