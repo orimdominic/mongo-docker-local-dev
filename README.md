@@ -11,7 +11,7 @@ This setup is for MongoDB local development to use transactions (with replica se
 
 1. (Required for replica set only) Add these entries to /etc/hosts file so your machine can resolve `mongo_1`, `mongo_2` and `mongo_3`:
 
-- For Linux/Mac, edit `/etc/hosts`:
+- For Linux/Mac, edit `/etc/hosts` (with `sudo` privileges):
 
 ```txt
 127.0.0.1   mongo_1
@@ -19,7 +19,7 @@ This setup is for MongoDB local development to use transactions (with replica se
 127.0.0.1   mongo_3
 ```
 
-- For Windows, edit C:\Windows\System32\drivers\etc\hosts (as Administrator):
+- For Windows, edit `C:\Windows\System32\drivers\etc\hosts` (as Administrator):
 
 ```txt
 127.0.0.1 mongo_1
