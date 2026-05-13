@@ -39,4 +39,4 @@ This setup is for MongoDB local development to use transactions (with replica se
 You can see sample connections in the `scripts` folder.
 
 > [!NOTE]
-> The mongodb-atlas-local server also runs a replica set by default.
+> The mongodb-atlas-local server also runs a single-node replica set by default.
