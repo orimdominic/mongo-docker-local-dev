@@ -66,31 +66,10 @@ services:
       - ./init_replset.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
     restart: on-failure
 
-  # For vector search
-  mongo_atlas:
-    image: mongodb/mongodb-atlas-local:7.0.16
-    container_name: mongodb_atlas
-    ports:
-      - "27004:27017"
-    environment:
-      - MONGODB_INITDB_ROOT_USERNAME=root
-      - MONGODB_INITDB_ROOT_PASSWORD=secret
-    volumes:
-      - mongo_atlas_data:/data/db
-    networks:
-      - mongo-net
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
-      interval: 10s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-
 volumes:
   mongo_1_data:
   mongo_2_data:
   mongo_3_data:
-  mongo_atlas_data:
 
 networks:
   mongo-net:
