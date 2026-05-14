@@ -33,7 +33,7 @@ This setup is for MongoDB local development to use transactions (with replica se
    - `make replas` to run both the replica set and the local atlas servers
 
 3. Use the connection strings below to connect to the database servers from your application or MongoDB Compass:
-   - replica set: `mongodb://mongo_1:27001,mongo_2:27002,mongo_3:27003/?replicaSet=rs0`
+   - replica set: `mongodb://mongo_1:27001,mongo_2:27002,mongo_3:27003/?replicaSet=rs`
    - atlas: `mongodb://root:secret@localhost:27004?directConnection=true`
 
 You can see sample connections in the `scripts` folder.

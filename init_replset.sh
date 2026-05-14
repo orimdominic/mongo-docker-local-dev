@@ -21,7 +21,7 @@ else
   echo "Initializing replica set..."
   mongosh --host "$PRIMARY" --eval '
     rs.initiate({
-      _id: "rs0",
+      _id: "rs",
       members: [
         { _id: 0, host: "mongo_1:27001", priority: 2 },
         { _id: 1, host: "mongo_2:27002", priority: 1 },

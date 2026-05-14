@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 const url =
-	"mongodb://mongo_1:27001,mongo_2:27002,mongo_3:27003/?replicaSet=rs0";
+	"mongodb://mongo_1:27001,mongo_2:27002,mongo_3:27003/?replicaSet=rs";
 
 async function main() {
 	let client;
