@@ -5,6 +5,8 @@ services:
     command: ["--replSet", "rs", "--bind_ip_all", "--port", "27001"]
     ports:
       - "27001:27001"
+    extra_hosts:
+      - "localhost:host-gateway"
     volumes:
       - mongo_1_data:/data/db
     networks:
