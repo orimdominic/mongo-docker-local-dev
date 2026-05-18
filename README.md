@@ -2,6 +2,9 @@
 
 This setup is for MongoDB local development to use transactions (with replica sets) and vector search (with mongodb-atlas-local).
 
+I wrote an article about it - [MongoDB Local Development Setup
+](https://orimdominic.github.io/posts/mongodb-local-development-setup/)
+
 ## Requirements
 
 - Docker
