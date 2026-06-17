@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 const url =
-	"mongodb://mongo_1:27001,mongo_2:27002,mongo_3:27003/?replicaSet=rs";
+	"mongodb://mongo_1:27001,mongo_2:27002,mongo_3:27003/?replicaSet=rs&authSource=admin";
 
 async function main() {
 	let client;
@@ -9,6 +9,10 @@ async function main() {
 		client = new MongoClient(url);
 		await client.connect();
 		console.log("connected to replica set server");
+
+		const coll = client.db("test").collection("coll");
+		await coll.insertOne({ text: "hi" });
+
 		await client.close();
 	} catch (error) {
 		console.error(error);

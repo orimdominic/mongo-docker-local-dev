@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
 
-const url = "mongodb://root:secret@localhost:27004?directConnection=true";
+const url =
+	"mongodb://root:secret@localhost:27004?directConnection=true&authSource=admin";
 
 async function main() {
 	let client;
@@ -8,6 +9,10 @@ async function main() {
 		client = new MongoClient(url);
 		await client.connect();
 		console.log("connected to atlas server database");
+
+		const coll = client.db("test").collection("coll");
+		await coll.insertOne({ text: "hi" });
+
 		await client.close();
 	} catch (error) {
 		console.error(error);
